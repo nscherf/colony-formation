@@ -1,0 +1,47 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf370
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww18740\viewh11380\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\b\fs24 \cf0 Registration\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b0 \cf0 \
+- code in ./DigitalImagesLibrary folder\
+- use Makefile (written for MacOS X version)\
+- works for g++ 4.2\
+- currently requires Intel Threading Building Blocks and Intel Compiler framework to work (free for Linux)\
+- precompiled binaries available for Mac OS X and Linux  \
+- required libraries in lib folder\
+\
+\
+
+\b Segmentation\
+
+\b0 \
+- currently done interactively with Ilastik (open source)\
+- {\field{\*\fldinst{HYPERLINK "http://www.ilastik.org/"}}{\fldrslt http://www.ilastik.org/}}\
+- save binary masks of segmented objects in separate folder (image_directory must be supplied to tracking script later on)\
+
+\b - IMPORTANT: final label images must be converted to 8Bit integer images !\
+
+\b0 \
+
+\b Tracking\
+
+\b0 \
+- folder TrackingMathematica\
+- Eidomatica package must be copied to Applications folder for Mathematica (in ~/.Mathematica/Applications under Linux or ~/Library/Mathematica/Applications for Mac OS X)\
+- Python script ./tracking performs colony tracking. See ./tracking -h for help\
+- see tracking-script.m for Mathematica code\
+
+\b - IMPORTANT: first line of tracking-script.m has to be adapted to local installation path of Mathematica \
+(default is #!/Applications/Mathematica.app/Contents/MacOS/MathKernel -script)\
+
+\b0 \
+
+\b Visualization\
+
+\b0 tbd\
+}

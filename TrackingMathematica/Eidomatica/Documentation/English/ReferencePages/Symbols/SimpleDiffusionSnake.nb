@@ -1,0 +1,581 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     15932,        571]
+NotebookOptionsPosition[     11547,        424]
+NotebookOutlinePosition[     12177,        449]
+CellTagsIndexPosition[     12098,        444]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["XX", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["Eidomatica Package", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->1451428289],
+
+Cell["Eidomatica`ActiveContours`", "Categorization",
+ CellLabel->"Context",
+ CellID->888506950],
+
+Cell["Eidomatica/ref/SimpleDiffusionSnake", "Categorization",
+ CellLabel->"URI",
+ CellID->1682511059]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["SimpleDiffusionSnake", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{"SimpleDiffusionSnake", "[", 
+   RowBox[{
+    StyleBox["image", "TI"], ",", " ", 
+    StyleBox["initialization", "TI"]}], "]"}]], "InlineFormula"],
+ "\[LineSeparator]iterates a simple diffusion snake, where image is a \
+grayscale or binary image and initialization is a list of points defining the \
+initial contour."
+}], "Usage",
+ CellChangeTimes->{3.530269330572063*^9}],
+
+Cell["The following options can be given: ", "Notes"],
+
+Cell[BoxData[GridBox[{
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Nodes",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/Nodes"], "100", Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["Nodes",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/Nodes"]], "InlineFormula"],
+     " is an option for various methods specifying the number of control \
+points to use."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Iterations",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/Iterations"], "500", Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["Iterations",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/Iterations"]], "InlineFormula"],
+     " is an option for various functions specifying the maximal number of \
+iterations done."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["Tension",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/Tension"], "0.3", Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["Tension",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/Tension"]], "InlineFormula"],
+     " is an option for ",
+     Cell[BoxData["SimpleDiffusionSnake"], "InlineFormula"],
+     ", which controls the influence of the tension term (length of the \
+contour)."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["ReturnAll",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/ReturnAll"], 
+    ButtonBox["False",
+     BaseStyle->"Link"], Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["ReturnAll",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/ReturnAll"]], "InlineFormula"],
+     " is an option for various functions specifying if only last or all \
+results of the iteration are returned."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["StepSize",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/StepSize"], "1.", Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["StepSize",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/StepSize"]], "InlineFormula"],
+     " is an option for various functions specifying the step size done in \
+each iteration step."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["MinimalError",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/MinimalError"], "0.00001", Cell[
+    TextData[{
+     Cell[BoxData[
+      ButtonBox["MinimalError",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/MinimalError"]], "InlineFormula"],
+     " is an option for several functions defining the error when the \
+iteration process stops."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["ShapeEnergyFunction",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/ShapeEnergyFunction"], 
+    ButtonBox["None",
+     BaseStyle->"Link"], Cell[TextData[{
+     "ShapeEnergyFunction[contour",
+     ", <>] represents a shape prior computed by ",
+     Cell[BoxData[
+      ButtonBox["ShapeEnergy",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/ShapeEnergy"]], "InlineFormula"],
+     "."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["ShapeEnergyParameter",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/ShapeEnergyParameter"], "0.3", Cell[
+    TextData[{
+     Cell[BoxData[
+      ButtonBox["ShapeEnergyParameter",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/ShapeEnergyParameter"]], 
+      "InlineFormula"],
+     " is an option for SimpleDiffusionSnake[], which controls the influence \
+of the prior knowledge onto the iteration process."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["ReparameterizationDistance",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/ReparameterizationDistance"], "0.5", 
+    Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["ReparameterizationDistance",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/ReparameterizationDistance"]], 
+      "InlineFormula"],
+     " is an option for SimpleDiffusionSnake[] which defines the minimal \
+distance between two control points at which reparameterization of the \
+contour is done."
+    }], "TableText"]},
+   {Cell["   ", "ModInfo"], 
+    ButtonBox["ShapeWeight",
+     BaseStyle->"Link",
+     ButtonData->"paclet:Eidomatica/ref/ShapeWeight"], "0.5", Cell[TextData[{
+     Cell[BoxData[
+      ButtonBox["ShapeWeight",
+       BaseStyle->"Link",
+       ButtonData->"paclet:Eidomatica/ref/ShapeWeight"]], "InlineFormula"],
+     " defines strength of shape prior relative to image energy."
+    }], "TableText"]}
+  }]], "3ColumnTableMod"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell["XXXX", "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Demonstrations", "RelatedDemonstrationsSection",
+ CellID->1268215905],
+
+Cell["XXXX", "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->1584193535],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell["XXXX", "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "MoreAboutSection",
+ CellID->38303248],
+
+Cell["XXXX", "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Scope", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1293636265],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Generalizations & Extensions", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1020263627],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Options", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Nodes", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Iterations", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Tension", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["ReturnAll", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["StepSize", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["MinimalError", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["ShapeEnergyFunction", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["ShapeEnergyParameter", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["ReparameterizationDistance", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"],
+
+Cell[BoxData[
+ InterpretationBox[Cell["ShapeWeight", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection"]
+}, Closed]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Applications", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->258228157],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Properties & Relations", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2123667759],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Possible Issues", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1305812373],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Interactive Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1653164318],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Neat Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->589267740]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{4, Automatic}, {Automatic, 0}},
+CellContext->"Global`",
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[9107, 337, 100, 2, 53, "ExtendedExamplesSection",
+   CellTags->"ExtendedExamples",
+   CellID->1854448968]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 11960, 437}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 324, 14, 23, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[906, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[977, 41, 79, 2, 29, "Categorization",
+ CellID->686433507],
+Cell[1059, 45, 92, 2, 29, "Categorization",
+ CellID->1451428289],
+Cell[1154, 49, 95, 2, 29, "Categorization",
+ CellID->888506950],
+Cell[1252, 53, 101, 2, 29, "Categorization",
+ CellID->1682511059]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1390, 60, 55, 1, 17, "KeywordsSection",
+ CellID->477174294],
+Cell[1448, 63, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1530, 69, 65, 1, 17, "TemplatesSection",
+ CellID->1872225408],
+Cell[1598, 72, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1695, 76, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1780, 80, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1864, 84, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1983, 91, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[2039, 94, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2105, 98, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2177, 102, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2244, 106, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2316, 110, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2380, 114, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2444, 118, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2510, 122, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2591, 126, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2695, 133, 63, 1, 62, "ObjectName",
+ CellID->1224892054],
+Cell[2761, 136, 438, 11, 83, "Usage"],
+Cell[3202, 149, 53, 0, 23, "Notes"],
+Cell[3258, 151, 4695, 123, 437, "3ColumnTableMod"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7990, 279, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[8050, 282, 45, 1, 16, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8132, 288, 83, 1, 30, "RelatedDemonstrationsSection",
+ CellID->1268215905],
+Cell[8218, 291, 58, 1, 16, "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8313, 297, 65, 1, 30, "RelatedLinksSection",
+ CellID->1584193535],
+Cell[8381, 300, 49, 1, 16, "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8467, 306, 55, 1, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[8525, 309, 43, 1, 16, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8605, 315, 57, 1, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[8665, 318, 46, 1, 16, "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+Cell[8726, 322, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[CellGroupData[{
+Cell[9107, 337, 100, 2, 53, "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+Cell[9210, 341, 125, 3, 31, "ExampleSection",
+ CellID->1293636265],
+Cell[9338, 346, 148, 3, 19, "ExampleSection",
+ CellID->1020263627],
+Cell[CellGroupData[{
+Cell[9511, 353, 106, 2, 19, "ExampleSection"],
+Cell[9620, 357, 110, 2, 70, "ExampleSubsection"],
+Cell[9733, 361, 115, 2, 70, "ExampleSubsection"],
+Cell[9851, 365, 112, 2, 70, "ExampleSubsection"],
+Cell[9966, 369, 114, 2, 70, "ExampleSubsection"],
+Cell[10083, 373, 113, 2, 70, "ExampleSubsection"],
+Cell[10199, 377, 117, 2, 70, "ExampleSubsection"],
+Cell[10319, 381, 124, 2, 70, "ExampleSubsection"],
+Cell[10446, 385, 125, 2, 70, "ExampleSubsection"],
+Cell[10574, 389, 131, 2, 70, "ExampleSubsection"],
+Cell[10708, 393, 116, 2, 70, "ExampleSubsection"]
+}, Closed]],
+Cell[10839, 398, 131, 3, 19, "ExampleSection",
+ CellID->258228157],
+Cell[10973, 403, 142, 3, 19, "ExampleSection",
+ CellID->2123667759],
+Cell[11118, 408, 135, 3, 19, "ExampleSection",
+ CellID->1305812373],
+Cell[11256, 413, 140, 3, 19, "ExampleSection",
+ CellID->1653164318],
+Cell[11399, 418, 132, 3, 19, "ExampleSection",
+ CellID->589267740]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

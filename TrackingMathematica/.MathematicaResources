@@ -1,0 +1,11 @@
+Resources[
+    Version[1],
+    Sources[
+        Directory["~"]
+    ],
+    ExecutionBuildCommand["<<Eidomatica`"],
+    Paclet[
+        PacletFolder["Eidomatica"],
+        FunctionPaclet[False]
+    ]
+]
